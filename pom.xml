@@ -10,8 +10,8 @@
 		<version>2.4.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.jesuitasrioja</groupId>
-	<artifactId>productos</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HolaMundo</name>
 	<description>Primera aplicacion API Rest DAM jesuitas</description>

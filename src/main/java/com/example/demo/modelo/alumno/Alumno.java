@@ -28,23 +28,79 @@ public class Alumno {
     @Column(name = "id",unique=true, nullable = false)
 	private String id;
 
-	@ApiModelProperty(value = "dni del alumno", dataType = "String", position = 2, example = "12345678A")
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		if (direccion == null) {
+			if (other.direccion != null)
+				return false;
+		} else if (!direccion.equals(other.direccion))
+			return false;
+		if (dni == null) {
+			if (other.dni != null)
+				return false;
+		} else if (!dni.equals(other.dni))
+			return false;
+		if (fechaNacimiento == null) {
+			if (other.fechaNacimiento != null)
+				return false;
+		} else if (!fechaNacimiento.equals(other.fechaNacimiento))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (profesor == null) {
+			if (other.profesor != null)
+				return false;
+		} else if (!profesor.equals(other.profesor))
+			return false;
+		if (responsable == null) {
+			if (other.responsable != null)
+				return false;
+		} else if (!responsable.equals(other.responsable))
+			return false;
+		if (telefono == null) {
+			if (other.telefono != null)
+				return false;
+		} else if (!telefono.equals(other.telefono))
+			return false;
+		return true;
+	}
+
+
+
+
+	@ApiModelProperty(value = "dni del alumno", dataType = "String", position = 2, example = "1662465Q")
 	@Column(name="dni")
 	private String dni;
 
-	@ApiModelProperty(value = "nombre del alumno", dataType = "String", position = 3, example = "Aitor")
+	@ApiModelProperty(value = "nombre del alumno", dataType = "String", position = 3, example = "Pablo")
 	@Column(name="nombre")
 	private String nombre;
 
-	@ApiModelProperty(value = "fecha de nacimiento del alumno", dataType = "String", position = 4, example = "01/02/2000")
+	@ApiModelProperty(value = "fecha de nacimiento del alumno", dataType = "String", position = 4, example = "27/09/2000")
 	@Column(name="fechaNacimiento")
 	private String fechaNacimiento;
 
-	@ApiModelProperty(value = "telefono del alumno", dataType = "String", position = 5, example = "123456789")
+	@ApiModelProperty(value = "telefono del alumno", dataType = "String", position = 5, example = "622524")
 	@Column(name="telefono")
 	private String telefono;
 
-	@ApiModelProperty(value = "direccion del alumno", dataType = "String", position = 6, example = "Logroño, Calle: calleFalsa123, N: 3, Piso:E")
+	@ApiModelProperty(value = "direccion del alumno", dataType = "String", position = 6, example = "Calle madrid, 1")
 	@Column(name="direccion")
 	private String direccion;
 

@@ -17,15 +17,15 @@ public class Responsable {
 	private long id;
 	
 	
-	@ApiModelProperty(value = "telefono del responsable", dataType = "String", position = 2, example = "123456789")
+	@ApiModelProperty(value = "telefono del responsable", dataType = "String", position = 2, example = "656659")
 	@Column(name="telefono")
 	private String telefono;
 	
-	@ApiModelProperty(value = "parentesco del responsable", dataType = "String", position = 3, example = "123456789")
+	@ApiModelProperty(value = "parentesco del responsable", dataType = "String", position = 3, example = "padre")
 	@Column(name="telefono")
 	private String parentesco;
 	
-	@ApiModelProperty(value = "nombre del responsable", dataType = "String", position = 4, example = "Aitor")
+	@ApiModelProperty(value = "nombre del responsable", dataType = "String", position = 4, example = "Pablo")
 	@Column(name="nombre")
 	private String nombre;
 
@@ -35,6 +35,37 @@ public class Responsable {
 		this.telefono = telefono;
 		this.parentesco = parentesco;
 		this.nombre = nombre;
+	}
+
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Responsable other = (Responsable) obj;
+		if (id != other.id)
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (parentesco == null) {
+			if (other.parentesco != null)
+				return false;
+		} else if (!parentesco.equals(other.parentesco))
+			return false;
+		if (telefono == null) {
+			if (other.telefono != null)
+				return false;
+		} else if (!telefono.equals(other.telefono))
+			return false;
+		return true;
 	}
 
 	public Responsable() {

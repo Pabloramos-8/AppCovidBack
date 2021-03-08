@@ -11,15 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AlumnoService extends BaseService<Alumno, String, AlumnoRepository> {
 	
-	// modo manual que se utiliza cuando los métodos del repository son suficientes.
-	public void cambiarNombre(String identificador, String nombre) {
-		Optional<Alumno> pOptional = this.repositorio.findById(identificador);
-		if (pOptional.isPresent()) {
-			Alumno p = pOptional.get();
-			p.setNombre(nombre);
-			this.repositorio.save(p);
-		}
-	}
+	
+
 
 	public Page<Alumno> encontrarPorNombre(String nombre, Pageable p) {
 		return this.repositorio.findByName(nombre, p);
