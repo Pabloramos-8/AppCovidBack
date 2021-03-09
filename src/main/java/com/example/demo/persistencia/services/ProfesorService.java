@@ -4,9 +4,11 @@ package com.example.demo.persistencia.services;
 import java.util.Optional;
 import java.awt.print.Pageable;
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+
 import com.example.demo.modelo.profesor.Profesor;
 import com.example.demo.persistencia.repositories.ProfesorRepository;
-
+@Service
 public class ProfesorService extends BaseService<Profesor, String, ProfesorRepository> {
 
     public void cambiarNombre(String identificador, String nombre) {

@@ -1,6 +1,8 @@
 package com.example.demo.configs.security;
 
 import com.example.demo.configs.security.jwt.JwtAuthorizationFilter;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -22,16 +24,15 @@ import lombok.RequiredArgsConstructor;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @RequiredArgsConstructor
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
-
-	private final AuthenticationEntryPoint jwtAuthenticationEntryPoint = null;
-	private final UserDetailsService userDetailsService = null;
-	private final PasswordEncoder passwordEncoder = null;
-	private final JwtAuthorizationFilter jwtAuthorizationFilter = new JwtAuthorizationFilter();
+	
+	
+	private final AuthenticationEntryPoint jwtAuthenticationEntryPoint;
+	private final UserDetailsService userDetailsService;
+	private final PasswordEncoder passwordEncoder;
+	private final JwtAuthorizationFilter jwtAuthorizationFilter;
 
 	@Bean
 	@Override
-	// Este método expone el mecanismo de autenticación para poder utilizarlo en un
-	// filtro. Por eso lleva la anotación de Bean.
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
