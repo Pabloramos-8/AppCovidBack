@@ -20,9 +20,6 @@ public class AlumnoDTO2 implements Serializable{
 
 	}
 	
-	public AlumnoDTO2() {
-
-	}
 
 
 	public String getNombre() {

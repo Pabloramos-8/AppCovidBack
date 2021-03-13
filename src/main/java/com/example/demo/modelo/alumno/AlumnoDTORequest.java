@@ -15,15 +15,6 @@ public class AlumnoDTORequest{
 	private String nombre;
 
 	
-	
-	public AlumnoDTORequest(String nombre  ) {
-		this.nombre = nombre;
-
-	}
-	
-	public AlumnoDTORequest() {
-
-	}
 
 
 	public String getNombre() {

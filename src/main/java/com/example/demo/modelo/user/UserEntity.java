@@ -31,9 +31,6 @@ public class UserEntity implements UserDetails {
  @Column
  String password;
 
- public UserEntity() {
-	 
- }
  
  public UserEntity(String username2, Set<UserRole> roles2) {
 	// TODO Auto-generated constructor stub
